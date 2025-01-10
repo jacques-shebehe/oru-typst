@@ -1,9 +1,26 @@
+#set page(
+  width: 15.7cm,
+  height: 22.3cm,
+  margin: (
+    top: 2.5cm,
+    bottom: 2.0cm,
+    inside: 3.0cm,
+    outside: 2.0cm,
+  ),
+  footer: context {
+    if counter(page).get().first() > 1 [ //conditional to remove footer on first page
+    Thesis Title
+    #h(1fr)
+    #counter(page).display("1")
+  ]
+})
+
 = Introduction
 == Level 2
 
 This is my _first_ *typst*.
 
-```typst
+```typc
 #set page(
   size: 157mm x 223mm,
   margin: ( // inner/outer for dynapic page when mirred pages. left/right for fixed margins.
@@ -22,7 +39,7 @@ This is my _first_ *typst*.
 ```
 
 
-```typst
+```typc
 #set page(
   size: 6.18in x 8.78in, // Page size in inches (157mm x 223mm converted to inches)
     margin: (
@@ -49,7 +66,7 @@ This is my _first_ *typst*.
 
 == Different footer on odd and even pages.
 
-```typst
+```typc
 #set page(
   size: 157mm x 223mm,
   margin: (
@@ -79,5 +96,6 @@ This is my _first_ *typst*.
     ]
   }
 )
-
 ```
+
+#lorem(100)
