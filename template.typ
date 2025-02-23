@@ -194,7 +194,11 @@
     it
   }
 
-  outline(indent: auto)
+  outline(
+    indent: auto,
+    title:  align(left, text(16pt, font: "Trade Gothic Next HvyCd")[Table of contents])
+    )
+
 
   pagebreak()
 
@@ -290,11 +294,7 @@
   pad(x: 30pt, y: 15pt, body)
 }
 
-#let bibliography() = (
-  path: "reference.bib",
-  cls: "vancouver-author-date.cls" ,
-  title: none
-) => any
+#show bibliography: set heading(numbering: "1")
 
 Author: Author
 Title: Thesis Title, Subtitle
