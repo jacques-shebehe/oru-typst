@@ -13,7 +13,7 @@
   keywords: [],
   doc,
 ) = {
-  set text(size: 0.9em, font: "Sabon Next") //11pt
+  set text(size: 0.9em, font: "Sabon Next LT") //11pt
   set par(leading: 0.7em, first-line-indent: 0em, justify: false, spacing: 1.0em)
   set page(
   width: 15.7cm,
@@ -75,7 +75,7 @@
     align(center + horizon)[#image(width: 70pt, "oru-logo.svg")],
     v(0.5em),
     align(center + horizon)[#author],
-    
+
     align(center, text(16pt, font: "Trade Gothic Next HvyCd")[#title]),
 
     align(center, text(12pt, font: "Trade Gothic Next HvyCd")[#subtitle]),
@@ -144,17 +144,17 @@
     align(left + horizon, text(0.8em, font: "Trade Gothic Next")[
     *ISBN:* 978-91- XXXX-XXX-X (pdf)
     ])
-    
+
 
     // align(center + horizon)[#image(width: 70pt, "oru-logo.svg")],
     // v(0.5em),
     // align(center + horizon)[#author],
-    
+
     // align(center, text(16pt, font: "Trade Gothic Next HvyCd")[#title]),
 
     // align(center, text(12pt, font: "Trade Gothic Next HvyCd")[#subtitle]),
     )
-    
+
     pagebreak()
 
   if dedication != none {
@@ -253,4 +253,3 @@
 
 Author: Author
 Title: Thesis Title, Subtitle
-
