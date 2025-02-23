@@ -1,9 +1,9 @@
 #import "template.typ": *
 
 #show: thesis.with(
-  title: [Title ],
+  title: [Health Literacy and Chronic Diseases],
   subtitle: [Subtitle],
-  author: [Author],
+  author: [Jacques Shebehe],
   dept: [My Department],
   year: [Year],
   month: [Month],
@@ -29,8 +29,21 @@
   dedication: [[Dedication/thanks to. This page is optional.]],
   acknowledgement: lorem(100),
   abstract: lorem(100),
-  keywords: [#lorem(20)]
+  keywords: [#lorem(20)],
+  list-of-papers: [
+
+    This thesis is based on the following studies, referred to in the text by their Roman numerals.
+
+    I.  Shebehe, J., Montgomery, S., Hansson, A. & Hiyoshi, A., 2022. [**Low health literacy and multiple medications in community-dwelling older adults: a population-based cohort study**. *BMJ Open*, 12 (2):](https://urn.kb.se/resolve?urn=%3Curn:nbn:se:oru:diva-97639%3E)e055117
+
+    II. Shebehe, J., Montgomery, S., Garcia-Argibay, M. & Hiyoshi, A. (2023). "**Health literacy and change in blood pressure among cohabiting older adults**". [Submitted]
+
+    III. **Cognitive function in late adolescence and its effect on BMI and diabetes in adulthood**.
+
+    IV. **Individual socioeconomic, regional and hospital factors, and risk of hospital readmission and inappropriate polypharmacy**.
+  ],
 )
+
 
 = Introduction
 
@@ -52,7 +65,7 @@
 
 $ delta S &= delta integral cal(L) dif t = 0 $
 
-Look in for more info.
+Look in for more info @Zomer-2016.
 
 #align(center)[
   #figure(
@@ -134,6 +147,8 @@ table.
   , kind: table
   )
 
+==== Heading 4
+
 If you want body text to continue directly after your table, you should
 add some extra space by selecting the text and change the Spacing
 settings for the first paragraph to for example 12 pt before.
@@ -170,7 +185,6 @@ ratio is high enough.
   ]
 )
 
-
 = References without numbers
 <references-without-numbers>
 Bryman, Alan. (2008). #emph[Social research methods];. 3. ed. Oxford:
@@ -196,3 +210,11 @@ Thousand Oaks, Calif: Sage Publications.
 
 + Lorig K. #emph[Patient education: A practical approach];. 3 ed.
   Thousand Oaks, Calif: Sage Publications; 2000.
+
+= References
+
+#bibliography(
+  "reference.bib",
+  style: "vancouver-author-date.csl" ,
+  title: none
+)

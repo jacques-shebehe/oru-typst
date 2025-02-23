@@ -11,28 +11,31 @@
   acknowledgement: [],
   abstract: [],
   keywords: [],
+  list-of-papers: [],
   doc,
 ) = {
   set text(size: 0.9em, font: "Sabon Next LT") //11pt
   set par(leading: 0.7em, first-line-indent: 0em, justify: false, spacing: 1.0em)
+  let page-nr = [#context here().page()]
+  let is-odd-page() = calc.rem(counter(page).get().first(), 2) == 1
   set page(
-  width: 15.7cm,
-  height: 22.3cm,
-  margin: (
-    top: 2.5cm,
-    bottom: 2.0cm,
-    inside: 3.0cm,
-    outside: 2.0cm,
-  ),
-    footer: context {
- //     set align(center)
-      if counter(page).get().at(0) != 1 {
-        []
-      } else {
-        []
-      }
-    },
-  )
+    width: 157mm,
+    height: 223mm,
+    margin: (
+      top: 2.5cm,
+      bottom: 2.0cm,
+      inside: 3.0cm,
+      outside: 2.0cm
+    ),
+      // footer: context {
+      //   set align(center)
+      //   if counter(page).get().at(0) != 1 {
+      //     [#counter(page).display("i")]
+      //   } else {
+      //     []
+      //   }
+      // },
+    )
   show math.equation: it => {
     if it.has("label") {
       math.equation(
@@ -211,32 +214,68 @@
 
   pagebreak()
 
+  if list-of-papers != none {
+    heading(level:1, outlined: true, numbering: none)[List of papers]
+    [#list-of-papers]
+  }
+
+  pagebreak()
+
   set page(
     numbering: "1",
-    footer: context [
-      #set align(center)
-      #counter(page).display()
-    ],
+    footer:
+      context {
+      if is-odd-page() [
+        #set text(
+          fill: red,
+          font: "Trade Gothic Next",
+          size: 8pt
+        )
+        #set align(right)
+          #grid(
+            columns: (1fr, auto),
+            column-gutter: 1cm,
+            [#title], [#counter(page).display("1")]
+          )
+      ]
+      else [
+        #set text(
+          font: "Trade Gothic Next",
+          size: 8pt
+        )
+        #set align(left)
+          #grid(
+            columns: (auto, 1fr),
+            column-gutter: 1cm,
+            [#counter(page).display("1")], [#author]
+          )
+      ]
+    }
   )
-  set heading(numbering: "1.1.1")
-  show heading: it => [
-    #v(12pt)
-    #it
-    #v(12pt)
-  ]
+
+  set heading(numbering: "1.1.1.1")
+
   show heading.where(level: 1): it => {
     counter(math.equation).update(0)
     if it.body == [Bibliography] {
       it
     } else {
       pagebreak(weak: true)
-      align(center)[Chapter
-        #counter(heading).display(it.numbering):
-        #it.body
-        #v(12pt)
-      ]
+      align(left, text(16pt, font: "Trade Gothic Next HvyCd")[
+        #counter(heading).display(it.numbering) #it.body]
+      )
     }
   }
+
+  show heading.where(level: 2): it => align(left,
+    text(13pt, font: "Trade Gothic Next HvyCd")[#counter(heading).display(it.numbering) #it.body]
+  )
+  show heading.where(level: 3): it => align(left,
+    text(13pt, font: "Trade Gothic Next HvyCd", fill: rgb(101, 101, 108))[#counter(heading).display(it.numbering) #it.body]
+  )
+  show heading.where(level: 4): it => align(left,
+    text(12pt, font: "Trade Gothic Next")[#counter(heading).display(it.numbering) #it.body]
+  )
   show figure.caption: it => {
     set par(leading: 0.65em)
     set text(size: 11pt)
@@ -250,6 +289,12 @@
   set par(leading: 0.65em)
   pad(x: 30pt, y: 15pt, body)
 }
+
+#let bibliography() = (
+  path: "reference.bib",
+  cls: "vancouver-author-date.cls" ,
+  title: none
+) => any
 
 Author: Author
 Title: Thesis Title, Subtitle
