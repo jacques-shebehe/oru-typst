@@ -34,7 +34,7 @@
 
     This thesis is based on the following studies, referred to in the text by their Roman numerals.
 
-    I.  Shebehe, J., Montgomery, S., Hansson, A. & Hiyoshi, A., 2022. [**Low health literacy and multiple medications in community-dwelling older adults: a population-based cohort study**. *BMJ Open*, 12 (2):](https://urn.kb.se/resolve?urn=%3Curn:nbn:se:oru:diva-97639%3E)e055117
+    I.  Shebehe, J., Montgomery, S., Hansson, A. & Hiyoshi, A., 2022.[*Low health literacy and multiple medications in community-dwelling older adults: a population-based cohort study*. _BMJ Open_, 12 (2):](https://urn.kb.se/resolve?urn=%3Curn:nbn:se:oru:diva-97639%3z)  e055117
 
     II. Shebehe, J., Montgomery, S., Garcia-Argibay, M. & Hiyoshi, A. (2023). "**Health literacy and change in blood pressure among cohabiting older adults**". [Submitted]
 
@@ -169,9 +169,10 @@ ratio is high enough.
 
 #figure(image("media/image6.png", height: 3.12885in, width: 4.54167in),
   caption: [
-    #strong[Figure 4.];You should check with your supervisor whether the
-    term Diagram or Figure is used in your discipline. Do not forget to
-    add alternative text!
+    You should check with your supervisor whether the
+    term Diagram or Figure is used in your discipline. Do not forget to add alternative text!
+
+    Please choose monochrome colors.
   ]
 )
 

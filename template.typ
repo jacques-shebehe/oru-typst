@@ -12,10 +12,16 @@
   abstract: [],
   keywords: [],
   list-of-papers: [],
+
   doc,
 ) = {
   set text(size: 0.9em, font: "Sabon Next LT") //11pt
-  set par(leading: 0.7em, first-line-indent: 0em, justify: false, spacing: 1.0em)
+  set par(
+    leading: 1.125em,
+    first-line-indent: 0em,
+    justify: false,
+    spacing: 0.73em
+  )
   let page-nr = [#context here().page()]
   let is-odd-page() = calc.rem(counter(page).get().first(), 2) == 1
   set page(
@@ -176,7 +182,7 @@
 //  align(center)[#author]
 
 
-  align(left, text(16pt, font: "Trade Gothic Next HvyCd")[Abstract])
+  align(left,  text(size:16pt, font: "Trade Gothic Next HvyCd")[Abstract])
 
  grid(
     columns: (1fr),
@@ -194,13 +200,32 @@
     it
   }
 
+show outline.entry.where(level: 1): it => {
+  text(16pt, font: "Trade Gothic Next HvyCd")[
+     #{it}
+  ]
+}
+
+show outline.entry.where(level: 2): it => {
+  text(13pt, font: "Trade Gothic Next HvyCd")[#{it}]
+}
+
+show outline.entry.where(level: 3): it => {
+  text(13pt, font: "Trade Gothic Next HvyCd", fill: rgb(101, 101, 108))[#{it}]
+}
+
+show outline.entry.where(level: 4): it => {
+  text(12pt, font: "Trade Gothic Next")[#{it}]
+}
+
   outline(
-    indent: auto,
-    title:  align(left, text(16pt, font: "Trade Gothic Next HvyCd")[Table of contents])
+    title:  align(left, text(16pt, font: "Trade Gothic Next HvyCd")[Table of contents]),
+    indent: 0.85em
     )
 
 
   pagebreak()
+
 
   outline(
     target: figure.where(kind: image),
@@ -219,7 +244,10 @@
   pagebreak()
 
   if list-of-papers != none {
+    align(left, text(size:16pt, font: "Trade Gothic Next HvyCd",
     heading(level:1, outlined: true, numbering: none)[List of papers]
+      )
+    )
     [#list-of-papers]
   }
 
@@ -257,18 +285,25 @@
     }
   )
 
-  set heading(numbering: "1.1.1.1")
+  set heading(numbering: "1.1.1.1", bookmarked: auto)
 
-  show heading.where(level: 1): it => {
-    counter(math.equation).update(0)
-    if it.body == [Bibliography] {
-      it
-    } else {
-      pagebreak(weak: true)
-      align(left, text(16pt, font: "Trade Gothic Next HvyCd")[
-        #counter(heading).display(it.numbering) #it.body]
-      )
-    }
+  // show heading.where(level: 1): it => {
+  //   counter(math.equation).update(0)
+  //   if it.body == [Bibliography] {
+  //     it
+  //   } else {
+  //     pagebreak(weak: true)
+  //     align(left, text(16pt, font: "Trade Gothic Next HvyCd")[
+  //       #counter(heading).display(it.numbering) #it.body]
+  //     )
+  //   }
+  // }
+
+  show heading.where(level: 1): it =>  {
+    pagebreak(weak: true)
+    align(left, text(16pt, font: "Trade Gothic Next HvyCd")[
+      #counter(heading).display(it.numbering) #it.body]
+    )
   }
 
   show heading.where(level: 2): it => align(left,
