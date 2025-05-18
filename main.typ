@@ -53,9 +53,6 @@
 
 #lorem(100)
 
-#align(center)[
-  #figure(emoji.explosion, caption: [Kapow!])
-]
 
 #lorem(200)
 
@@ -87,9 +84,10 @@ To insert pictures, select the style sheet ORU\_Insert picture. By doing
 so your picture will be placed correctly in the document. Do not forget
 to add alternative text (“Alt Text\")!
 
-#figure(image("media/image3.png", height: 1.87361in, width: 4.48681in),
+#figure(
+  image("media/image3.png", width: 100%),
   caption: [
-    #strong[Figure 1.] To add an image or figure description
+    To add an image or figure description
     \[bild/figurtext\] to your picture, right-click the picture and
     select “Insert caption”. Apply ORU\_Description and make “Figure X”
     bold.
@@ -98,7 +96,7 @@ to add alternative text (“Alt Text\")!
 
 #figure(image("media/image4.png", height: 2.44792in, width: 3.375in),
   caption: [
-    #strong[Figure 2.] If you use the function “Insert caption”
+    If you use the function “Insert caption”
     \[\"Infoga beskrivning\"\] the numbering of the figure will adjust
     automatically.
   ]
@@ -155,7 +153,7 @@ settings for the first paragraph to for example 12 pt before.
 
 #figure(image("media/image5.png", height: 3.67708in, width: 2.95833in),
   caption: [
-    #strong[Figure 3.] Shows how to adjust spacing in the paragraph
+    Shows how to adjust spacing in the paragraph
     settings.
   ]
 )
@@ -176,13 +174,11 @@ ratio is high enough.
   ]
 )
 
-#strong[Figure 5];. Please choose monochrome colors.
 
 #figure(image("media/image7.png", height: 3.12885in, width: 4.54167in),
   caption: [
-    #strong[Figure 4.];You should check with your supervisor whether the
-    term Diagram or Figure is used in your discipline. Do not forget to
-    add alternative text!
+    You should check with your supervisor whether the
+    term Diagram or Figure is used in your discipline. Do not forget to add alternative text!
   ]
 )
 

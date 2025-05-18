@@ -17,10 +17,10 @@
 ) = {
   set text(size: 0.9em, font: "Sabon Next LT") //11pt
   set par(
-    leading: 1.125em,
+    leading: 1.125em, //exactly 13.5pt
     first-line-indent: 0em,
     justify: false,
-    spacing: 0.73em
+    spacing: 0.73em, //exactly 8.75pt
   )
   let page-nr = [#context here().page()]
   let is-odd-page() = calc.rem(counter(page).get().first(), 2) == 1
@@ -301,25 +301,86 @@ show outline.entry.where(level: 4): it => {
 
   show heading.where(level: 1): it =>  {
     pagebreak(weak: true)
+    set text(16pt, font: "Trade Gothic Next HvyCd")
+    set par(
+      leading: 1.667em,    // 20pt 
+      spacing: 0.667em,    // After 8pt
+    )
     align(left, text(16pt, font: "Trade Gothic Next HvyCd")[
       #counter(heading).display(it.numbering) #it.body]
     )
   }
 
-  show heading.where(level: 2): it => align(left,
-    text(13pt, font: "Trade Gothic Next HvyCd")[#counter(heading).display(it.numbering) #it.body]
-  )
-  show heading.where(level: 3): it => align(left,
-    text(13pt, font: "Trade Gothic Next HvyCd", fill: rgb(101, 101, 108))[#counter(heading).display(it.numbering) #it.body]
-  )
-  show heading.where(level: 4): it => align(left,
-    text(12pt, font: "Trade Gothic Next")[#counter(heading).display(it.numbering) #it.body]
-  )
-  show figure.caption: it => {
-    set par(leading: 0.65em)
-    set text(size: 11pt)
-    emph(it)
+  show heading.where(level: 2): it => {
+    set text(13pt, font: "Trade Gothic Next HvyCd")   
+    set par(
+      leading: 1.25em,     // 15pt 
+      spacing: 0.333em,    // After 4pt 
+    )
+    block(above: 1.167em) // Before 14pt 
+    align(left)[
+      #counter(heading).display(it.numbering) #it.body
+    ]
   }
+
+
+  show heading.where(level: 3): it => {
+    set text(
+      size: 13pt, 
+      font: "Trade Gothic Next HvyCd", 
+      fill: rgb(101, 101, 108)
+    )
+    set par(
+      leading: 1.25em,     // 15pt 
+      spacing: 0.333em,    // After 4pt 
+    )
+    block(above: 1.167em)       // Before 14pt 
+    align(left)[
+      #counter(heading).display(it.numbering) #it.body
+    ]    
+  }
+
+  show heading.where(level: 4): it => {
+    set text(12pt, font: "Trade Gothic Next")   
+    set par(
+      leading: 1.25em,     // 15pt 
+      spacing: 0.333em,    // After 4pt 
+    )
+    block(above: 1.167em)       // Before 14pt 
+    align(left)[
+      #counter(heading).display(it.numbering) #it.body
+      ]
+  }
+
+
+//show figure.caption: it => context {
+//  set align(left)
+//  set par(
+//    leading: 0.917em, // line spacing: 11pt
+//  )
+//  v(0.5em) // before: 6pt 
+//  text(
+//    font: "Trade Gothic Next",
+//    size: 0.8em, // 9.5pt
+//  )[
+//    #strong[#it.supplement #it.counter.display().] #it.body
+//  ]
+//  v(0.5em) // after: 24pt
+//}
+show figure: set align(left)
+
+show figure.caption: it => context {
+  set par(leading: 0.917em)    // 11pt line spacing
+  v(0.5em)                     // space before caption
+  text(
+    font: "Trade Gothic Next",
+    size: 0.8em,               // 9.5pt
+  )[
+    #strong[#it.supplement #it.counter.display().] #it.body
+  ]
+  v(2em)                       // 24pt space after caption
+}
+
 
   doc
 }
