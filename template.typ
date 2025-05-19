@@ -248,7 +248,16 @@ show outline.entry.where(level: 4): it => {
     heading(level:1, outlined: true, numbering: none)[List of papers]
       )
     )
-    [#list-of-papers]
+    //v(8pt)
+    {
+      set enum(numbering: "I.", body-indent: 1cm)
+      set list(spacing: 0.5em)
+      set par(
+      //  leading: 1.227em,// 13.5pt line height for base 11pt font 
+        spacing: 1em
+      )    //  v(8pt)
+      list-of-papers
+    }
   }
 
   pagebreak()

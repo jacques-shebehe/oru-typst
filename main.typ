@@ -31,17 +31,16 @@
   abstract: lorem(100),
   keywords: [#lorem(20)],
   list-of-papers: [
-
     This thesis is based on the following studies, referred to in the text by their Roman numerals.
 
-    I.  Shebehe, J., Montgomery, S., Hansson, A. & Hiyoshi, A., 2022.[*Low health literacy and multiple medications in community-dwelling older adults: a population-based cohort study*. _BMJ Open_, 12 (2):](https://urn.kb.se/resolve?urn=%3Curn:nbn:se:oru:diva-97639%3z)  e055117
+    + Shebehe, J., Montgomery, S., Hansson, A. & Hiyoshi, A., 2022.[*Low health literacy and multiple medications in community-dwelling older adults: a population-based cohort study*. _BMJ Open_, 12 (2):](https://urn.kb.se/resolve?urn=%3Curn:nbn:se:oru:diva-97639%3z)  e055117
 
-    II. Shebehe, J., Montgomery, S., Garcia-Argibay, M. & Hiyoshi, A. (2023). "**Health literacy and change in blood pressure among cohabiting older adults**". [Submitted]
+    + Shebehe, J., Montgomery, S., Garcia-Argibay, M. & Hiyoshi, A. (2023). "**Health literacy and change in blood pressure among cohabiting older adults**". [Submitted]
 
-    III. **Cognitive function in late adolescence and its effect on BMI and diabetes in adulthood**.
+    + **Cognitive function in late adolescence and its effect on BMI and diabetes in adulthood**.
 
-    IV. **Individual socioeconomic, regional and hospital factors, and risk of hospital readmission and inappropriate polypharmacy**.
-  ],
+    + **Individual socioeconomic, regional and hospital factors, and risk of hospital readmission and inappropriate polypharmacy**.
+  ]
 )
 
 
