@@ -1,9 +1,9 @@
 #import "template.typ": *
 
 #show: thesis.with(
-  title: [Health Literacy and Chronic Diseases],
+  title: [Thesis Title],
   subtitle: [Subtitle],
-  author: [Jacques Shebehe],
+  author: [Author],
   dept: [My Department],
   year: [Year],
   month: [Month],
@@ -28,63 +28,90 @@
   ),
   dedication: [[Dedication/thanks to. This page is optional.]],
   acknowledgement: lorem(100),
-  abstract: lorem(100),
-  keywords: [#lorem(20)],
+  abstract: [
+    This is fictitious abstract regarding the scientific literature on the association between obesity and type 2 diabetes mellitus. It was reported that our high BMI was associated with an increased risk of T2DM. This association was graded with higher BMI associated with a higher risk of T2DM. Also, among people with BMI ≥ 30, the risk of T2DM was greater before than after age 50. What are the mechanisms explaining these associations? Please add references of peer.
+
+    Regarding the scientific literature on the association between obesity and type 2 diabetes millets. It was reported that our high BMI was associated with an increased risk of T2DM. This association was graded with higher BMI associated with a higher risk of T2DM. Also, among people with BMI ≥ 30, the risk of T2DM was greater before than after age 50. What are the mechanisms explaining these associations? Please add references of peer.
+
+    Regarding the scientific literature on the association between obesity and type 2 diabetes mellites. It was reported that our high BMI was associated with an increased risk of T2DM. This association was graded with higher BMI associated with a higher risk of T2DM. Also, among people with BMI ≥ 30, the risk of T2DM was greater before than after age 50. What are the mechanisms explaining these associations? Please add references of peer.
+
+    The mechanisms explaining these associations? Please add refer regarding the scientific literature on the association between obesity and type 2 diabetes mellitus. It was reported that our high BMI. The mechanisms explaining these associations? Please add refer regarding the scientific literature on the association between obesity and type 2 diabetes mellitus. It was reported that our high BMI.
+  ],
+  keywords: [
+   Health literacy, Chronic diseases, Diabetes, Obesity, Hypertension, Cardiovascular disease, Diabetes mellitus, Obesity, Cardiovascular disease, Diabetes mellitus, Diabetes mellitus, Obesity, Card. Is even last line.
+  ],
   list-of-papers: [
     This thesis is based on the following studies, referred to in the text by their Roman numerals.
 
-    + Shebehe, J., Montgomery, S., Hansson, A. & Hiyoshi, A., 2022.[*Low health literacy and multiple medications in community-dwelling older adults: a population-based cohort study*. _BMJ Open_, 12 (2):](https://urn.kb.se/resolve?urn=%3Curn:nbn:se:oru:diva-97639%3z)  e055117
+    + Use the style sheet ORU_List of Papers. If not needed, the page should be deleted.
 
-    + Shebehe, J., Montgomery, S., Garcia-Argibay, M. & Hiyoshi, A. (2023). "**Health literacy and change in blood pressure among cohabiting older adults**". [Submitted]
+    + LastName, FirstName, 2021. “Title of article. And possible subtitle”. Name of journal, 1:1, 90–95 [volume, number and pages]. 
 
-    + **Cognitive function in late adolescence and its effect on BMI and diabetes in adulthood**.
+    + Article/Study 3
 
-    + **Individual socioeconomic, regional and hospital factors, and risk of hospital readmission and inappropriate polypharmacy**.
+    Reprints were made with permission from the respective publishers.
   ]
 )
 
+= [ORU_H1_Heading 1]
 
-= Introduction
+Start to write here. The template will automatically use ORU_Body text unless you make changes manually. Do not add extra space between headings and body text or between paragraphs unless you have a specific reason to do so. If so, you should add space in the paragraph settings, otherwise it will complicate the per-ception of the text for those who use different kinds of accessibility aids.
 
-#lorem(100)
-
-== Background
-
-#lorem(100)
+When you want to start a new paragraph, just press Enter.
 
 
-#lorem(200)
+== [ORU_H2_Heading 2]
 
-#iuquote([#lorem(50)])
+ORU_Body text will always follow the style sheets for headings (ORU_H1–ORU_H5). 
+Citat/quotation. Use the stylesheet ORU_Quotation for all longer quotations and an indent and smaller font will automatically be used [@Zomer-2016; @Arbaje-2008].
 
-=== More History
+=== [ORU_H3_Heading 3]
+Replace this text.
 
-$ delta S &= delta integral cal(L) dif t = 0 $
+==== [ORU_H4_Heading 4]
+Replace this text.
 
-Look in for more info @Zomer-2016.
+= ORU_H1_Heading #1
 
-#align(center)[
-  #figure(
-    table(
-      columns: 3,
-      table.header([], [*Thing 1*], [*Thing 2*]),
-      [Experiment 1], [1.0], [2.0],
-      [Experiment 2], [3.0], [4.0],
-    ),
-    caption: [My table],
-  )
-]
+If you need numbered headings, please use the style sheets ORU_H1_Heading #1–ORU_H4_Heading #4, see below. Otherwise delete this page.
+When you want to start a new paragraph, just press Enter.
 
-= Methods
+== ORU_H2_Heading #2
+ORU_Body text will always follow the style sheets for headings (ORU_H1_Heading #1–ORU_H4_Heading #4).
 
-== Insert pictures, figures and tables
+=== ORU_H3_Heading #3
+ORU_Body text will always follow the style sheets for headings (ORU_H1_Heading #1–ORU_H4_Heading #4).
 
-To insert pictures, select the style sheet ORU\_Insert picture. By doing
-so your picture will be placed correctly in the document. Do not forget
-to add alternative text (“Alt Text\")!
+==== ORU_H4_Heading #4
+ORU_Body text will always follow the style sheets for headings (ORU_H1_Heading #1–ORU_H4_Heading #4).
+
+= Use the built-in format lists
+
+By using the built-in format lists you ensure that the structure is correct also for those who use different kinds of accessibility aids. 
+
+== Letter list
+
+a. ORU_Letter list – Et vel mossus moluptatio. Rum non re nam et di dipsam quia ditibus earum nonem niendebis dolorepro. 
+b. Et re alist, volorent evenduntion pora illam, sequod quat escil ilicatendis nem expersp ercidi tem. 
+
+== Bulleted list
+
+- ORU_Bullet list - Et vel mossus moluptatio. Rum non re nam et di dipsam quia ditibus earum nonem niendebis dolorepro.
+- Et re alist, volorent evenduntion pora illam, sequod quat escil ilicatendis nem expersp ercidi tem. 
+
+== Numbered list
+
+1. ORU_Numbered list – Et vel mossus moluptatio. Rum non re nam et di dipsam quia ditibus earum nonem niendebis dolore-pro. 
+2. Et re alist, volorent evenduntion pora illam, sequod quat escil ilicatendis nem expersp ercidi tem.
+
+When you want body text to apply again, you must select the style sheet ORU_Body text.
+
+= Insert pictures, figures and tables
+
+To insert pictures, select the style sheet ORU_Insert picture. By do-ing so your picture will be placed correctly in the document. Do not forget to add alternative text (“Alt Text")!
 
 #figure(
-  image("media/image3.png", width: 100%),
+  image("media/image3.png", height: 4.73cm, width: 11.4cm),
   caption: [
     To add an image or figure description
     \[bild/figurtext\] to your picture, right-click the picture and
@@ -93,7 +120,7 @@ to add alternative text (“Alt Text\")!
   ]
 )
 
-#figure(image("media/image4.png", height: 2.44792in, width: 3.375in),
+#figure(image("media/image4.png", height: 6.22cm, width: 8.57cm),
   caption: [
     If you use the function “Insert caption”
     \[\"Infoga beskrivning\"\] the numbering of the figure will adjust
@@ -101,11 +128,9 @@ to add alternative text (“Alt Text\")!
   ]
 )
 
-=== Use the tool for tables and charts
+== Use the tool for tables and charts
 
-Use the Table tool and Chart tool \[diagramverktyget\] in Word to insert
-tables and charts \[diagram\]. The tools, if used correctly, support
-accessibility.
+Use the Table tool and Chart tool \[diagramverktyget\] in Word to insert tables and charts \[diagram\]. The tools, if used correctly, support accessibility.
 
 Table 1#strong[.] Table descriptions are normally inserted above the
 table.
@@ -144,11 +169,7 @@ table.
   , kind: table
   )
 
-==== Heading 4
-
-If you want body text to continue directly after your table, you should
-add some extra space by selecting the text and change the Spacing
-settings for the first paragraph to for example 12 pt before.
+If you want body text to continue directly after your table, you should add some extra space by selecting the text and change the Spacing settings for the first paragraph to for example 12 pt before.
 
 #figure(image("media/image5.png", height: 3.67708in, width: 2.95833in),
   caption: [
@@ -157,12 +178,7 @@ settings for the first paragraph to for example 12 pt before.
   ]
 )
 
-Charts \[diagram\] as well as figures and pictures must have an
-alternative text. Right-click the chart \[diagram\] or figure to add or
-edit your alternative text (“Alt Text”). It is also important to use
-colours or patterns with sufficient contrast to other elements. Print
-your diagram or figure in black and white to check that the contrast
-ratio is high enough.
+Charts [diagram] as well as figures and pictures must have an alter-native text. Right-click the chart [diagram] or figure to add or edit your alternative text (“Alt Text”). It is also important to use colours or patterns with sufficient contrast to other elements. Print your diagram or figure in black and white to check that the contrast ratio is high enough.
 
 #figure(image("media/image6.png", height: 3.12885in, width: 4.54167in),
   caption: [
@@ -183,34 +199,21 @@ ratio is high enough.
 
 = References without numbers
 <references-without-numbers>
-Bryman, Alan. (2008). #emph[Social research methods];. 3. ed. Oxford:
-Oxford University Press.
+Use a .csl file numbered (e.g. vancouver.csl) or unnumbered (e.g. vancouver-author-date.csl) style.
 
-Goworek, H., Fisher, T., Cooper, T., Woodward, S. & Hiller, A. (2012).
-The sustainable clothing market: an evaluation of potential strategies
-for UK retailers. #emph[International Journal of Retail & Distribution
-Management];, 40(12), 935--955. doi:10.1108/09590551211274937
+//#bibliography(
+//  "reference.bib",
+//  style: "vancouver-author-date.csl" ,
+//  title: none
+//),
 
-Lorig K. (2000). #emph[Patient education: A practical approach];. 3 ed.
-Thousand Oaks, Calif: Sage Publications.
+Below are an example of numbered references.
 
 = References with numbers
 <references-with-numbers>
-+ Bryman, Alan. #emph[Social research methods];. 3. ed. Oxford: Oxford
-  University Press; 2008.
-
-+ Goworek, H., Fisher, T., Cooper, T., Woodward, S. & Hiller, A. The
-  sustainable clothing market: an evaluation of potential strategies for
-  UK retailers. #emph[International Journal of Retail & Distribution
-  Management];. 2012; 40(12): 935--955. doi:10.1108/09590551211274937
-
-+ Lorig K. #emph[Patient education: A practical approach];. 3 ed.
-  Thousand Oaks, Calif: Sage Publications; 2000.
-
-= References
 
 #bibliography(
   "reference.bib",
-  style: "vancouver-author-date.csl" ,
+  style: "vancouver.csl" , // for unnumbered reference, use a .csl file numbered unnumbered style (e.g. vancouver-author-date.csl).
   title: none
 )
