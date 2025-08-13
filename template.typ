@@ -1,12 +1,11 @@
 //set heading functions
 #let TOC_Heading(content, spacing: 18pt) = [
   #text(16pt, font: "Trade Gothic Next HvyCd")[#content]
-  #v(18pt)
 ]
-#let ORU_H1_Heading_1(content) = text(16pt, font: "Trade Gothic Next HvyCd")[#content]
-#let ORU_H2_Heading_2(content) = text(13pt, font: "Trade Gothic Next HvyCd")[#content]
-#let ORU_H3_Heading_3(content) = text(13pt, font: "Trade Gothic Next HvyCd", fill: rgb(101, 101, 108))[#content]
-#let ORU_H4_Heading_4(content) = text(12pt, font: "Trade Gothic Next")[#content]
+#let ORU_H1_Heading_1(content) = text(font: "Trade Gothic Next HvyCd")[#content]
+#let ORU_H2_Heading_2(content) = text(font: "Trade Gothic Next HvyCd")[#content]
+#let ORU_H3_Heading_3(content) = text(font: "Trade Gothic Next HvyCd", fill: rgb(101, 101, 108))[#content]
+#let ORU_H4_Heading_4(content) = text(font: "Trade Gothic Next")[#content]
 
 #let thesis(
   title: none,
@@ -35,18 +34,15 @@ set text(
   font: "Sabon Next",
   size: 11pt, 
   weight: "regular", 
+  hyphenate: true,
+  tracking: 0.0em, // -- set distance between letters in a word
 ) 
 set par(
-  leading: 0.65em, //1.125em,      // Line spacing: 13.5pt
+  leading: 0.73em, //1.125em,      // Line spacing: 13.5pt
   first-line-indent: 0em, // Opt
   justify: false,
   spacing: 1.5em, //-- Spacing after: 8pt,
   )
-set text(
-  hyphenate: true,
-  tracking: 0em, // -- set distance between letters in a word
-)
-
 
   let page-nr = [#context here().page()]
   let is-odd-page() = calc.rem(counter(page).get().first(), 2) == 1
@@ -193,21 +189,22 @@ set text(
     top + left,
     dy: 0cm,  // Start immediately after previous content
     grid(
-      columns: (11.4cm),
+      columns: (11.3cm),
       rows: (0.79cm, 16.05cm, 2.46cm),  // Specific heights for each row
       row-gutter: 0em,
       align: left,
       stroke: 0.5pt,
       
       // Row 1: Abstract heading (0.79cm height)
-      //align(left + top)[#text(16pt, font: "Trade Gothic Next HvyCd")[Abstract]],
-      TOC_Heading([Abstract]),
-      
+      //align(left + horizon)[#text(16pt, font: "Trade Gothic Next HvyCd")[Abstract]],
+      align(left + horizon)[#text(TOC_Heading([Abstract]))],
+
       // Row 2: Abstract content (16.05cm height)
-      pad(top: 18pt)[#abstract],
-      
+      pad(top: 13pt)[#abstract],
+      //align(left + horizon)[#abstract],
+
       // Row 3: Keywords (1.46cm height)
-      [Keywords: #keywords]
+      align(left + horizon)[Keywords: #keywords]
     )
   )
 //  pagebreak()
@@ -236,7 +233,7 @@ show outline: set par(leading: 0.75em)
 
 show outline.entry.where(level: 1): it => {
   v(12pt, weak: true)
-  ORU_H1_Heading_1(it)
+  text(size: 12pt)[#ORU_H1_Heading_1(it)]
 }
 
 show outline.entry.where(level: 2): it => {
@@ -301,26 +298,34 @@ outline(
 
 show heading.where(level: 1): it => {
   if it.body == [List of papers] {
-    set par(leading: 1.25em, spacing: 0.333em)
+    pagebreak(weak: true)
+    set text(size: 16pt)
+    set par(leading: 1.25em, spacing: 1.09em)
     align(left)[#ORU_H1_Heading_1(it.body)]
   } else {
     pagebreak(weak: true)
-    set par(leading: 1.25em, spacing: 0.333em)
+    set text(size: 16pt)
+    set par(leading: 1.25em, spacing: 1.09em)
     align(left)[#ORU_H1_Heading_1([#counter(heading).display(it.numbering) #it.body])]
   }
 }
 
 show heading.where(level: 2): it => {
-  set par(leading: 1.25em, spacing: 0.333em)
+  //v(14pt)
+  set text(size: 13pt)
+  set par(leading: 1.15em, spacing: 0.333em)
   align(left)[#ORU_H2_Heading_2([#counter(heading).display(it.numbering) #it.body])]
+  v(-4pt)
 }
 
 show heading.where(level: 3): it => {
+  set text(size: 13pt)
   set par(leading: 1.25em, spacing: 0.333em)
   align(left)[#ORU_H3_Heading_3([#counter(heading).display(it.numbering) #it.body])]
 }
 
 show heading.where(level: 4): it => {
+  set text(size: 12pt)
   set par(leading: 1.25em, spacing: 0.333em)
   align(left)[#ORU_H4_Heading_4([#counter(heading).display(it.numbering) #it.body])]
 }
