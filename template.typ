@@ -1,8 +1,7 @@
-//set heading functions
 #let TOC_Heading(content, spacing: 18pt) = [
   #text(16pt, font: "Trade Gothic Next HvyCd")[#content]
 ]
-#let ORU_H1_Heading_1(content) = text(font: "Trade Gothic Next HvyCd")[#content]
+#let ORU_H1_Heading_1(content)= text(font: "Trade Gothic Next HvyCd")[#content]
 #let ORU_H2_Heading_2(content) = text(font: "Trade Gothic Next HvyCd")[#content]
 #let ORU_H3_Heading_3(content) = text(font: "Trade Gothic Next HvyCd", fill: rgb(101, 101, 108))[#content]
 #let ORU_H4_Heading_4(content) = text(font: "Trade Gothic Next")[#content]
@@ -380,14 +379,14 @@ show heading.where(level: 4): it => {
 show figure: set align(left)
 show figure.caption: it => context {
   set par(leading: 0.917em)    // 11pt line spacing
-//  v(0.3em)                     // space before caption
+  v(0.3em)                     // space before caption
   text(
     font: "Trade Gothic Next",
     size: 0.8em,               // 9.5pt
   )[
     #strong[#it.supplement #it.counter.display().] #it.body
   ]
-//  v(2em)                       // 24pt space after caption
+  v(2em)                       // 24pt space after caption
 }
 
 
